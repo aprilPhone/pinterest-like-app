@@ -6,8 +6,7 @@ import { PinModule } from './pin/pin.module';
 @Module({
     imports: [
         MongooseModule.forRoot(
-            process.env.DATABASE_URL ||
-                'mongodb://localhost:27017/pinterest-like-app',
+            process.env.DATABASE_URL || 'mongodb://localhost:27017/pin-db',
         ),
         UploadModule,
         PinModule,

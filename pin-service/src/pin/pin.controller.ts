@@ -5,6 +5,7 @@ import {
     UploadedFile,
     UseInterceptors,
     Get,
+    Query,
 } from '@nestjs/common';
 import { PinService } from './pin.service';
 import { CreatePinDto } from './dto/create-pin.dto';
@@ -26,5 +27,11 @@ export class PinController {
     @Get()
     async findAll() {
         return this.pinsService.findAll();
+    }
+
+    @Get('byIds')
+    async findByIds(@Query('ids') ids: string) {
+        const idsArray = ids.split(','); // Convierte la cadena de IDs en un array
+        return this.pinsService.findByIds(idsArray);
     }
 }

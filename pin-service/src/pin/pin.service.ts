@@ -35,4 +35,8 @@ export class PinService {
     async findAll(): Promise<Pin[]> {
         return this.pinModel.find().exec();
     }
+
+    async findByIds(ids: string[]): Promise<Pin[]> {
+        return this.pinModel.find({ _id: { $in: ids } }).exec();
+    }
 }
