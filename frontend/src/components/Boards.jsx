@@ -19,7 +19,8 @@ export default function Boards() {
 
   useEffect(() => {
     const userId = "12345"; // Hardcodeamos el userId
-    fetch(`http://localhost:3002/boards/user/${userId}`)
+    // Cambiar la URL para que apunte al API Gateway en el puerto 8000
+    fetch(`http://localhost:8000/boards/user/${userId}`)
       .then((response) => response.json())
       .then((data) => setBoards(data))
       .catch((error) => console.error("Error fetching boards:", error));

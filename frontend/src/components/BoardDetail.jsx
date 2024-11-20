@@ -19,7 +19,7 @@ export default function BoardDetail() {
   // Usamos useEffect para cargar los detalles del tablero
   useEffect(() => {
     // Hacer la llamada a la API para obtener los detalles del tablero
-    fetch(`http://localhost:3002/boards/${boardId}`)
+    fetch(`http://localhost:8000/boards/${boardId}`)
       .then((response) => response.json())
       .then((data) => setBoard(data))
       .catch((error) => console.error("Error fetching board details:", error));

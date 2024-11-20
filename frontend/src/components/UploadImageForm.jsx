@@ -40,7 +40,7 @@ export default function PinForm() {
     formData.append("title", title);
     formData.append("description", description);
 
-    fetch("http://localhost:3001/pins", {
+    fetch("http://localhost:8000/pins", {
       method: "POST",
       body: formData,
     })

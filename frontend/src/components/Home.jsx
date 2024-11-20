@@ -22,19 +22,22 @@ export default function Home() {
   const [selectedPin, setSelectedPin] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const navigate = useNavigate(); // Hook para redirigir
+  const navigate = useNavigate();
 
-  // Simulamos la carga de pins desde el backend
+  // Base URL del API Gateway
+  const apiGatewayUrl = "http://localhost:8000";
+
+  // Carga de pins desde el API Gateway
   useEffect(() => {
-    fetch("http://localhost:3001/pins")
+    fetch(`${apiGatewayUrl}/pins`)
       .then((response) => response.json())
       .then((data) => setPins(data))
       .catch((error) => console.error("Error fetching pins:", error));
   }, []);
 
-  // Simulamos la carga de boards desde el backend
+  // Carga de boards desde el API Gateway
   useEffect(() => {
-    fetch("http://localhost:3002/boards/user/12345")
+    fetch(`${apiGatewayUrl}/boards/user/12345`)
       .then((response) => response.json())
       .then((data) => setBoards(data))
       .catch((error) => console.error("Error fetching boards:", error));
@@ -61,7 +64,7 @@ export default function Home() {
   const handleSaveToBoard = (boardId) => {
     if (!selectedPin) return;
 
-    fetch(`http://localhost:3002/boards/${boardId}/add-pin`, {
+    fetch(`${apiGatewayUrl}/boards/${boardId}/add-pin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
