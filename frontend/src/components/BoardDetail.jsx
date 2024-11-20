@@ -8,6 +8,7 @@ import {
   ImageList,
   ImageListItem,
   IconButton,
+  Avatar,
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
@@ -49,6 +50,9 @@ export default function BoardDetail() {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             {board.name}
           </Typography>
+          <Avatar sx={{ ml: 2 }} alt="Usuario">
+            AF
+          </Avatar>
         </Toolbar>
       </AppBar>
 

@@ -9,6 +9,7 @@ import {
   CardContent,
   Button,
   IconButton,
+  Avatar,
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
@@ -45,6 +46,9 @@ export default function Boards() {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Mis Tableros
           </Typography>
+          <Avatar sx={{ ml: 2 }} alt="Usuario">
+            AF
+          </Avatar>
         </Toolbar>
       </AppBar>
 

@@ -7,6 +7,7 @@ import {
   IconButton,
   AppBar,
   Toolbar,
+  Avatar,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -73,6 +74,9 @@ export default function PinForm() {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Crear Pin
           </Typography>
+          <Avatar sx={{ ml: 2 }} alt="Usuario">
+            AF
+          </Avatar>
         </Toolbar>
       </AppBar>
 

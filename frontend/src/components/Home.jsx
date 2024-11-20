@@ -11,6 +11,7 @@ import {
   Button,
   Menu,
   MenuItem,
+  Avatar,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import AddIcon from "@mui/icons-material/Add";
@@ -108,6 +109,9 @@ export default function Home() {
           <IconButton color="inherit" onClick={handleAddClick}>
             <AddIcon />
           </IconButton>
+          <Avatar sx={{ ml: 2 }} alt="Usuario">
+            AF
+          </Avatar>
         </Toolbar>
       </AppBar>
 
